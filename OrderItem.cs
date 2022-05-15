@@ -1,6 +1,6 @@
 ﻿namespace sda_csharp_exercises_classes
 {
-    class OrderItem:Order
+    class OrderItem
     {
         public string ProductName { get; set; }
         public int Quantity { get; set; } 
@@ -11,7 +11,7 @@
             Quantity = quantity;
             UnitPrice = unitPrice;
         }
-        public override decimal GetValue()
+        public virtual decimal GetValue()
         {
             return Quantity*UnitPrice;
         }

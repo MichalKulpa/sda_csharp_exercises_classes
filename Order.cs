@@ -1,15 +1,23 @@
-﻿namespace sda_csharp_exercises_classes
+﻿using System;
+
+namespace sda_csharp_exercises_classes
 {
     class Order
     {
-       public virtual decimal GetValue()
+       public OrderItem[] Items { get; set; }
+        public Order(OrderItem[] items)
         {
-            return 0.00M;
+            Items = items;
         }
-        public override string ToString()
+        public void PrintOrderInfo()
         {
-            return base.ToString();
+            decimal sum = 0.00M;
+            foreach (OrderItem item in Items)
+            {
+                Console.WriteLine(item.ToString());
+                sum += item.GetValue();
+            }
+            Console.WriteLine($"Całkowita wartość zamówienia: {sum} PLN");
         }
-
     }
 }
