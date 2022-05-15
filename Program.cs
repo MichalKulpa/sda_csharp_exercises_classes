@@ -15,6 +15,16 @@ namespace sda_csharp_exercises_classes
             bank.AddAccount(account);
             bank.AddAccount(savingAccount);
             Console.WriteLine($"Łącznie posiadamy: {bank.GetTotalAmount()}");
+
+            BasicAccount basicAccount1 = new();
+            basicAccount1.IncreaseBalance(100);
+            BasicAccount basicAccount2 = new();
+            basicAccount2.IncreaseBalance(200);
+            basicAccount2.IncreaseInterests(0.20M);
+            BasicBank basicBank = new();
+            basicBank.AddAccount(basicAccount1);
+            basicBank.AddAccount(basicAccount2);
+            Console.WriteLine($"Łącznie posiadamy: {basicBank.GetTotalAmount()}");
         }
     }
 }
