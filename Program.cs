@@ -13,7 +13,7 @@ namespace sda_csharp_exercises_classes
                 new OrderItem("Bułka",20,1.00M),
                 new OrderItemWithPackage("Ser",10,5.50M,"pudełko",0.50M)
             };
-            Order order1 = new Order(order);
+            Order order1 = new(order);
             order1.PrintOrderInfo();
         }
         
