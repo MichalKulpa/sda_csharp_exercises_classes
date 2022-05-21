@@ -1,4 +1,6 @@
-﻿namespace sda_csharp_exercises_classes
+﻿using System;
+
+namespace sda_csharp_exercises_classes
 {
     class MyPoint
     {
@@ -8,6 +10,10 @@
         {
             X = x;
             Y = y;
+        }
+        public virtual double GetDistanceFromPoint(MyPoint3D point)
+        {
+            return Math.Sqrt(Math.Pow(X+point.X,2)+Math.Pow(Y+point.Y,2));
         }
     }
 }

@@ -13,12 +13,22 @@ namespace sda_csharp_exercises_classes
         }
         public LineSegment(int startX, int startY, int startZ, int endX, int endY, int endZ)
         {
-            Start = new(startX, startY, startZ);
-            End = new(endX, endY, endZ);
+            Start = new MyPoint3D(startX, startY, startZ);
+            End = new MyPoint3D(endX, endY, endZ);
+        }
+        public LineSegment(int startX, int startY, int endX, int endY)
+        {
+            Start = new MyPoint3D(startX, startY,0);
+            End = new MyPoint3D(endX, endY,0);
+        }
+        public LineSegment(MyPoint start,MyPoint end)
+        {
+            Start = new MyPoint3D(start.X,start.Y,0);
+            End = new MyPoint3D(end.X,end.Y,0);
         }
         public double Lenght()
         {
-            return Math.Sqrt(Math.Pow(End.X - Start.X, 2) + Math.Pow(End.Y - Start.Y, 2) + Math.Pow(End.Z - Start.Z, 2));
+            return Start.GetDistanceFromPoint(End);           
         }
     }
 }
