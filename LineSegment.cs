@@ -4,8 +4,8 @@ namespace sda_csharp_exercises_classes
 {
     class LineSegment
     {
-        public MyPoint3D Start { get; set; }
-        public MyPoint3D End { get; set; }
+        public MyPoint Start { get; set; }
+        public MyPoint End { get; set; }
         public LineSegment(MyPoint3D start, MyPoint3D end)
         {
             Start = start;
@@ -18,15 +18,15 @@ namespace sda_csharp_exercises_classes
         }
         public LineSegment(int startX, int startY, int endX, int endY)
         {
-            Start = new MyPoint3D(startX, startY,0);
-            End = new MyPoint3D(endX, endY,0);
+            Start = new MyPoint(startX, startY);
+            End = new MyPoint(endX, endY);
         }
         public LineSegment(MyPoint start,MyPoint end)
         {
-            Start = new MyPoint3D(start.X,start.Y,0);
-            End = new MyPoint3D(end.X,end.Y,0);
+            Start = new MyPoint(start.X,start.Y);
+            End = new MyPoint(end.X,end.Y);
         }
-        public double Lenght()
+        public double GetLenght()
         {
             return Start.GetDistanceFromPoint(End);           
         }
