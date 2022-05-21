@@ -2,7 +2,7 @@
 
 namespace sda_csharp_exercises_classes
 {
-    class Circle:IShape
+    class Circle : IShape
     {
         public int Radius { get; set; }
         public Circle(int radius)

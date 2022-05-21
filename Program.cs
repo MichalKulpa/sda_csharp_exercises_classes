@@ -6,7 +6,7 @@ namespace sda_csharp_exercises_classes
     {
         static void Main(string[] args)
         {
-            IShape[] shapes = new IShape[] 
+            IShape[] shapes = new IShape[]
             {
                 new Circle(3),
                 new Circle(4),
@@ -18,7 +18,7 @@ namespace sda_csharp_exercises_classes
         static double GetTotalArea(IShape[] shapes)
         {
             double sum = 0;
-            for(int i=0; i<shapes.Length;i++)
+            for (int i = 0; i < shapes.Length; i++)
             {
                 sum += shapes[i].GetArea();
             }
